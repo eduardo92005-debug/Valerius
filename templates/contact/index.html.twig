@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello ContactController!{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-6 d-block">
+                <h1> Fale conosco! </h1>
+                <p>Preencha corretamente os dados ao lado para enviar mensagem</p>
+                <i class="fa fa-phone">
+                    <span> (99) 992331-312321</span>
+                </i>
+                <br/>
+                <i class="fa fa-envelope">
+                    <span>dakdsksdak@gmail.com</span>
+                </i>
+                <br/>
+                <i class="fa fa-map-marker">
+                    <span>Rua das flores, nº 123</span>
+                </i>
+            </div>
+            <div class="col-md-6">
+                <!-- a form in bootstrap to send a message -->
+                <form action="" method="POST">
+                    <div class="form-group my-2">
+                        <label class="fw-bolder" for="name">Nome<span class="required text-danger">*</span></label>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Nome">
+                    </div>
+                    <div class="form-group my-2">
+                        <label class="fw-bolder" for="email">Email<span class="required text-danger">*</span></label>
+                        <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                    </div>
+                    <div class="form-group my-2">
+                        <label class="fw-bolder" for="message">Mensagem<span class="required text-danger">*</span></label>
+                        <textarea class="form-control" id="message" name="message" rows="3"></textarea>
+                    </div>
+                    <p class="text-muted"><span class="required text-danger">*</span> Campos obrigatorios</p>
+                    <button type="submit" class="btn btn-primary">Enviar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

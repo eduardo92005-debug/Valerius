@@ -1,0 +1,71 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello AboutController!{% endblock %}
+
+{% block body %}
+<style>
+    .img--fit {
+        object-fit: cover;
+    }
+.banner {
+    background-image: url('https://wallpaperaccess.com/full/105957.jpg');
+    background-size: cover;
+    background-position: center 75%;
+    background-repeat: no-repeat;
+    object-fit:fill;
+    height: 65vh;
+    width: 100%;
+}
+</style>
+<div class="wrapper">
+    <div class="container-fluid m-0 p-0">
+        <div class="col-md-12">
+            <div class="banner img-fluid d-flex flex-column justify-content-end align-items-end">
+                <div class="container ">
+                    <h2 class="display-2 text-warning fw-bolder">Conheca nossa empresa </h2>
+                    <p class="fs-5 text-white font-monospace">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus sed quos id.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content--white my-5">
+        <div class="row">
+            <div class="col-md-6">
+                <h1> Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis, maiores! </h1>
+                <blockquote class ="blockquote">
+                    <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem dolor consectetur eum aut, voluptatibus consequatur id aspernatur mollitia magnam soluta molestias quisquam fuga, expedita sit deleniti dicta vero qui facilis quas sed facere fugit et. Placeat provident, sed asperiores laudantium voluptatem maiores! Numquam, atque? Sit pariatur expedita nihil, quidem, minus maiores ullam neque facere repudiandae sint nemo natus accusamus quam assumenda aliquid sequi, tenetur error nesciunt architecto exercitationem harum dicta dolorem omnis placeat! Fuga eaque facere corrupti aliquid fugiat delectus earum architecto tempore temporibus vero iure, saepe similique, ad omnis corporis, accusamus soluta aperiam nostrum aliquam. Laboriosam sint nihil veritatis aut necessitatibus non? Autem asperiores delectus quibusdam ipsa mollitia commodi numquam tempore minus tempora hic recusandae, eius voluptatibus enim laboriosam earum pariatur, iure nostrum totam temporibus ipsam et molestiae perspiciatis voluptate eos. Dolorem blanditiis perferendis repellendus rerum reprehenderit totam consequatur voluptatem quasi odio, quisquam, voluptatum minus nobis, deserunt commodi quos!
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, fuga.
+                        </li>
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, fuga.
+                        </li>
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, fuga.
+                        </li>
+                        <li>
+                            <i class="bi bi-check2"></i>
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Totam, fuga.
+                        </li>
+                    </ul>
+
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis quam veritatis, qui laborum soluta nostrum nemo eum sapiente expedita accusantium.</p>
+                    
+                </blockquote>
+               
+                <a href="#" class="btn btn-outline-dark btn-lg"> Veja nossos servicos </a>
+            </div>
+            <div class="col-md-6">
+                <img src="https://www.bv.com.br/site/resources/images/restaurar-ou-trocar-o-carro.jpg" alt="" class="img-fluid img--fit h-100 rounded"/>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

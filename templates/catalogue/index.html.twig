@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello CatalogueController!{% endblock %}
+
+{% block body %}
+<div class="wrapper">
+    <div class="container">
+        <div class="row">
+        {% for car in cars %}
+            <div class="card m-2 my-5 p-0" style="width: 18rem;">
+                <img class="card-img-top h-50 img-fluid" src="{{ asset('images/products/') ~ car.imageName }}" alt="Card image cap" style="object-fit:fill;">
+                <div class="card-body">
+                    <h3 class="card-title">{{car.name}}</h3>
+                    <p class="card-text">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur hic porro exercitationem iure doloremque earum, asperiores suscipit provident consequatur quam.</p>
+                    <strong>Cor: {{car.color}} </strong>
+                    <br/>
+                    <strong>Ano: {{car.year}} </strong>
+                    <br/>
+                    <strong>Modelo: {{car.model}} </strong>
+                    <br/>
+                    <p class="text-danger"><strong>Total: $ {{car.price}} </strong></p>
+                    <p>  <a href="{{ path('app_catalogue_details', {'id': car.id } )}}" class="btn btn-outline-dark btn-lg w-100"> Ver mais </a> </p>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}
