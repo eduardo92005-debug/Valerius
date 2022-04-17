@@ -1,7 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}Hello CatalogueController!{% endblock %}
-
+{% block banner_status %}
+display:none;
+{% endblock %}
 {% block body %}
 <style>
 .banner {
@@ -19,8 +21,8 @@
         <div class="col-md-12">
             <div class="banner img-fluid d-flex flex-column justify-content-end align-items-end">
                 <div class="container ">
-                    <h2 class="display-2 text-warning fw-bolder" style="color:red;filter:none;"> Sobre o carro</h2>
-                    <p class="fs-5 text-white font-monospace"> Nos iremos consertar seu carro e ainda vendemos novos carros e modelos que voce precisa</p>
+                    <h2 class="display-2 text-warning fw-bolder" style="color:red;filter:none;"> Information about car</h2>
+                    <p class="fs-5 text-white font-monospace"> Here you will find all the necessary information about the car.</p>
                 </div>
             </div>
         </div>
@@ -34,11 +36,11 @@
                     <div class="d-flex justify-content-sm-between justify-content-md-between">
                         <div class="col-md-4">
                             <h5 class="card-title text-muted"><small>Price</small></h5>
-                            <h5 class="card-title">{{car.price}}</h5>
+                            <h5 class="card-title">€ {{car.price}}</h5>
                         </div>
                         <div class="col-md-4">
                             <h5 class="card-title text-muted"><small>Year</small></h5>
-                            <h5 class="card-title">{{car.Year}}</h5>
+                            <h5 class="card-title">{{car.year}}</h5>
                         </div>
                         <div class="col-md-4">
                             <h5 class="card-title text-muted"><small>KM</small></h5>

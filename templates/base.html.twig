@@ -25,7 +25,35 @@
         {% endblock %}
     </head>
     <body>
+        <style>
+            .banner {
+                /*'https://wallpaperaccess.com/full/105957.jpg' */
+                background-image: url({% block banner_img %}{% endblock %});
+                background-size: cover;
+                background-position: center 75%;
+                background-repeat: no-repeat;
+                object-fit:fill;
+                height: 65vh;
+                width: 100%;
+            }
+            .banner--status{
+                {% block banner_status %}display:inherit;{% endblock %}
+            }
+        </style>
         {% include "navbar.html.twig" %}
+        {% block banner %}
+                <div class="container-fluid banner--status m-0 p-0">
+                <div class="col-md-12">
+                <div class="banner img-fluid d-flex flex-column justify-content-end align-items-end">
+                    <div class="container ">
+                    <h1 class="display-1 text-white fw-light"> {% block banner_title_text %}{% endblock %} </h1>
+                    <h2 class="display-2 text-warning fw-bolder" style="color:red;filter:none;"> {% block banner_warning_text %}{% endblock %}</h2>
+                    <p class="fs-5 text-white font-monospace">{% block banner_subtitle_text %}{% endblock %}</p>
+                </div>
+            </div>
+            </div>
+        </div>
+        {% endblock %}
         {% block body %}{% endblock %}
         {% include "footer.html.twig" %}
     </body>

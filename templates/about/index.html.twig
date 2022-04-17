@@ -2,32 +2,17 @@
 
 {% block title %}Hello AboutController!{% endblock %}
 
+{% block banner_img %}'https://wallpaperaccess.com/full/105957.jpg'{% endblock %}
+{% block banner_warning_text %}About us{% endblock %}
+{% block banner_subtitle_text %}Here you will have all the necessary information about our company{% endblock %}
+
 {% block body %}
 <style>
     .img--fit {
         object-fit: cover;
     }
-.banner {
-    background-image: url('https://wallpaperaccess.com/full/105957.jpg');
-    background-size: cover;
-    background-position: center 75%;
-    background-repeat: no-repeat;
-    object-fit:fill;
-    height: 65vh;
-    width: 100%;
-}
 </style>
-<div class="wrapper">
-    <div class="container-fluid m-0 p-0">
-        <div class="col-md-12">
-            <div class="banner img-fluid d-flex flex-column justify-content-end align-items-end">
-                <div class="container ">
-                    <h2 class="display-2 text-warning fw-bolder">Conheca nossa empresa </h2>
-                    <p class="fs-5 text-white font-monospace">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis accusamus sed quos id.</p>
-                </div>
-            </div>
-        </div>
-    </div>
+
 
     <div class="container body-content--white my-5">
         <div class="row">
