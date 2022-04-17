@@ -27,6 +27,11 @@ class Service
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Repair::class, inversedBy="associate_service")
+     */
+    private $repair;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -54,5 +59,22 @@ class Service
         $this->description = $description;
 
         return $this;
+    }
+
+    public function getRepair(): ?Repair
+    {
+        return $this->repair;
+    }
+
+    public function setRepair(?Repair $repair): self
+    {
+        $this->repair = $repair;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->name;
     }
 }

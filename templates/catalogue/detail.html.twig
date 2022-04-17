@@ -65,7 +65,13 @@ display:none;
                     <hr/>
                     <h5 class="card-title text-muted"><small>About car</small></h5>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda laboriosam harum vero eveniet dignissimos provident amet corporis ratione eligendi praesentium. Dolore accusamus autem nisi exercitationem alias dignissimos! Eveniet, aut? Voluptate commodi eaque enim modi quam neque. Officia tempore dolorum optio doloremque error id similique suscipit est aliquid. Facilis, nisi incidunt.</p>
-                    <a href="#" class="btn btn-outline-dark btn-lg w-100"> Buy Now </a>
+                    <form method="post">
+                        {% if in_basket %}
+                            <button disabled class="btn btn-outline-dark btn-lg w-100"> Added to basket </a>
+                        {% else %}
+                            <button type="submit" class="btn btn-outline-dark btn-lg w-100"> Add to basket </a>
+                        {% endif %}
+                    </form>
                 </div>
             </div>
         </div>

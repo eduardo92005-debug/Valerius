@@ -1,0 +1,9 @@
+#config/packages/beelab_paypal.yaml
+
+beelab_paypal:
+    username: "alexandrina_dutra_api1.outlook.fr"
+    password: "75YHNC2NV9QNH924"
+    signature: "AcbY8FVlqFl1Xfzi1DZoyKKs9UhoAAiVzLT1GMkaEr-lC4TB-Bo7Fp-9"
+    return_route: app_home
+    cancel_route: app_home
+    test_mode: "%kernel.debug%"

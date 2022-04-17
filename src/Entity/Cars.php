@@ -82,6 +82,11 @@ class Cars
      */
     private $comments;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Basket::class, inversedBy="add_cars")
+     */
+    private $basket;
+
     public function __construct()
     {
         $this->comments = new ArrayCollection();
@@ -207,7 +212,8 @@ class Cars
 
     public function getUpdatedAt(): ?\DateTimeImmutable
     {
-        return $this->updatedAt;
+        $now = new \DateTimeImmutable();
+        return $now;
     }
 
     public function setUpdatedAt(\DateTimeImmutable $updatedAt): self
@@ -243,6 +249,18 @@ class Cars
                 $comment->setProduct(null);
             }
         }
+
+        return $this;
+    }
+
+    public function getBasket(): ?Basket
+    {
+        return $this->basket;
+    }
+
+    public function setBasket(?Basket $basket): self
+    {
+        $this->basket = $basket;
 
         return $this;
     }

@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello BasketController!{% endblock %}
+{% block banner_status %}
+display:none;
+{% endblock %}
+{% block body %}
+<div class="wrapper">
+    <div class="container">
+        {% for car in basket %}
+        <div class="card my-3 w-100" style="max-width: 100%;">
+            <div class="row no-gutters">
+              <div class="col-md-4">
+                <img src="{{ asset('images/products/') ~ car.imageName }}" class="card-img img-fluid h-100" alt="...">
+              </div>
+              <div class="col-md-6 align-self-center">
+                <div class="card-body">
+                  <h5 class="card-title">{{car.name}}</h5>
+                  <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores, iusto libero. Dolor maiores accusamus mollitia alias, corrupti officia. Quod modi repellendus cupiditate nam in explicabo, debitis beatae saepe assumenda accusamus.</p>
+                  <p class="fw-bolder">Price:€ {{car.price}}</p>
+                  <p class="card-text"><small class="text-muted">Last updated {{car.updatedAt | date('H:i:s') }} mins ago</small></p>
+                </div>
+              </div>
+              <div class="col-md-2 align-self-center">
+                  <form method="post">
+                    <button class="btn btn-outline-danger btn-lg w-75">Remove</button>
+                    <input type="hidden" name="id" value="{{car.id}}">
+                  </form>
+                 
+
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+        <div class="total-text my-4 d-flex justify-content-between align-items-end">
+            <p class="fw-bolder mb-0">Total: € {{total | number_format(2)}}</p>
+            <button class="btn btn-outline-dark btn-lg w-25"> Complete Payment </button>
+        </div>
+    </div>
+</div>
+{% endblock %}

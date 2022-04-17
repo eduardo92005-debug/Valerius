@@ -8,7 +8,7 @@ display:none;
 {% block body %}
 <div class="wrapper">
     <div class="container">
-        <div class="row">
+        <div class="row justify-content-between">
         {% for car in cars %}
             <div class="card m-2 my-5 p-0" style="width: 18rem;">
                 <img class="card-img-top h-50 img-fluid" src="{{ asset('images/products/') ~ car.imageName }}" alt="Card image cap" style="object-fit:fill;">

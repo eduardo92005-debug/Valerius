@@ -49,12 +49,26 @@
                 <p>About</p>
             </a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link d-flex" href="#">
+        <li class="nav-item dropdown">
+        {% if app.user is same as(null) %}
+            <a class="nav-link d-flex" href="{{ path('app_login')}}">
                 <i class="fas fa-user m-1"></i>
-                <p>Account</p>
+                <p>Profile</p>
             </a>
+        {% else %}
+            <a class="nav-link d-flex" href="{{ path('app_profile_edit', {'id': app.user.id } )}}">
+                <i class="fas fa-user m-1"></i>
+                <p>Profile</p>
+            </a>
+        {% endif %}
         </li>
+
+        <li class="nav-item">
+            <a class="nav-link d-flex" href="{{ path('app_login')}}">
+            <!-- a door icon font awesome -->
+                <i class="fas fa-door-open m-1"></i>
+                <p>Login</p>
+            </a>
 
         <li class="nav-item">
           
@@ -72,7 +86,7 @@
             </a>
         </li>
         <li class="nav-item">
-            <a class="nav-link d-flex" href="{{ path('app_home') }}">
+            <a class="nav-link d-flex" href="{{ path('app_services') }}">
                 <i class="fas fa-tools m-1"></i>
                 <p>Services</p>
             </a>

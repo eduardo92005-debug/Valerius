@@ -32,6 +32,11 @@ class Profile
      */
     private $birth_date;
 
+    /**
+     * @ORM\OneToOne(targetEntity=User::class, cascade={"persist", "remove"})
+     */
+    private $associate_user;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -71,5 +76,22 @@ class Profile
         $this->birth_date = $birth_date;
 
         return $this;
+    }
+
+    public function getAssociateUser(): ?User
+    {
+        return $this->associate_user;
+    }
+
+    public function setAssociateUser(?User $associate_user): self
+    {
+        $this->associate_user = $associate_user;
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->full_name;
     }
 }

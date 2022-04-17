@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\RepairRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -36,6 +38,16 @@ class Repair
      * @ORM\Column(type="string", length=500, nullable=true)
      */
     private $description;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Service::class, mappedBy="repair")
+     */
+    private $associate_service;
+
+    public function __construct()
+    {
+        $this->associate_service = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -88,5 +100,40 @@ class Repair
         $this->description = $description;
 
         return $this;
+    }
+
+    /**
+     * @return Collection<int, Service>
+     */
+    public function getAssociateService(): Collection
+    {
+        return $this->associate_service;
+    }
+
+    public function addAssociateService(Service $associateService): self
+    {
+        if (!$this->associate_service->contains($associateService)) {
+            $this->associate_service[] = $associateService;
+            $associateService->setRepair($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAssociateService(Service $associateService): self
+    {
+        if ($this->associate_service->removeElement($associateService)) {
+            // set the owning side to null (unless already changed)
+            if ($associateService->getRepair() === $this) {
+                $associateService->setRepair(null);
+            }
+        }
+
+        return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->problem;
     }
 }
