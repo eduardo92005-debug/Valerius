@@ -36,7 +36,7 @@ class ProfileController extends AbstractController
     }
 
     /**
-     * @Route("/{id}", name="app_profile_delete", methods={"POST"})
+     * @Route("profile/delete/{id}", name="app_profile_delete", methods={"POST"})
      */
     public function delete(Request $request, Profile $profile, ProfileRepository $profileRepository): Response
     {
@@ -44,6 +44,6 @@ class ProfileController extends AbstractController
             $profileRepository->remove($profile);
         }
 
-        return $this->redirectToRoute('app_profile_delete');
+        return $this->redirectToRoute('app_home');
     }
 }

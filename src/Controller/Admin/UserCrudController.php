@@ -3,8 +3,13 @@
 namespace App\Controller\Admin;
 
 use App\Entity\User;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\IdField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\ArrayField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\BooleanField;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
+use Symfony\Component\Form\Extension\Core\Type\PasswordType;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -13,14 +18,17 @@ class UserCrudController extends AbstractCrudController
         return User::class;
     }
 
-    /*
+   
     public function configureFields(string $pageName): iterable
     {
         return [
-            TextField::new('subject'),
-            AssociationField::new('product'),
-            TextEditorField::new('message'),
+            IdField::new('id')->hideOnForm(),
+            TextField::new('email'),
+            ArrayField::new('roles'),
+            TextField::new('Password')->setFormType(PasswordType::class),
+            BooleanField::new('is_verified'),
         ];
-    }*/
+    }
+    
     
 }
